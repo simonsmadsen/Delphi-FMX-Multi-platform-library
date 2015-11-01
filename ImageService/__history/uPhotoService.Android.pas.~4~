@@ -1,0 +1,67 @@
+unit uPhotoService.Android;
+
+interface
+
+uses
+    FMX.MediaLibrary.Actions
+  , uPhotoServiceInterface
+  , System.SysUtils
+  , FMX.Graphics, FMX.StdCtrls;
+
+type
+
+TAndroidPhotoService = class(TInterfacedObject,IPhotoService)
+protected
+  FFakeBtn: TButton;
+  FTakePhotoFromCameraAction: TTakePhotoFromCameraAction;
+public
+  procedure TakePhoto;
+  procedure PickPhoto;
+  function GetPhotoTaken: TProc<TBitmap>;
+  procedure SetPhotoTaken(Value: TProc<TBitmap>);
+  property OnPhotoTakenOrPicked: TProc<TBitmap> read GetPhotoTaken write SetPhotoTaken;
+
+  constructor Create;
+  destructor Destroy; override;
+end;
+
+implementation
+
+{ TAndroidPhotoService }
+
+constructor TAndroidPhotoService.Create;
+begin
+  FFakeBtn := TButton.Create(nil);
+
+  FTakePhotoFromCameraAction := TTakePhotoFromCameraAction.Create(FFakeBtn);
+  FTakePhotoFromCameraAction.OnDidFinishTaking := TakePhotoFromCameraActionDidFinishTaking;
+end;
+
+destructor TAndroidPhotoService.Destroy;
+begin
+  FFakeBtn.Free;
+  FTakePhotoFromCameraAction.Free;
+  inherited;
+end;
+
+function TAndroidPhotoService.GetPhotoTaken: TProc<TBitmap>;
+begin
+
+end;
+
+procedure TAndroidPhotoService.PickPhoto;
+begin
+
+end;
+
+procedure TAndroidPhotoService.SetPhotoTaken(Value: TProc<TBitmap>);
+begin
+
+end;
+
+procedure TAndroidPhotoService.TakePhoto;
+begin
+
+end;
+
+end.

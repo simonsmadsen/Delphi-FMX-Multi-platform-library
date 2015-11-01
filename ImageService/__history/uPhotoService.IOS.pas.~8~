@@ -1,0 +1,71 @@
+unit uPhotoService.IOS;
+
+interface
+
+uses
+  uPhotoServiceInterface, System.SysUtils, FMX.Graphics,FMX.TMSNativeUIImagePickerController;
+
+type
+
+TIOSPhotoService = class(TInterfacedObject,IPhotoService)
+protected
+  FPhotoTakenOrPicked: TProc<TBitmap>;
+  TMSFMXNativeUIImagePickerController1: TTMSFMXNativeUIImagePickerController;
+  procedure TMSFMXNativeUIImagePickerController1DidFinishPickingBitmap(Sender: TObject; ABitmap: TBitmap);
+  procedure IOSCAncelImagePicking(Sender: TObject);
+public
+  procedure TakePhoto;
+  procedure PickPhoto;
+  function GetPhotoTaken: TProc<TBitmap>;
+  procedure SetPhotoTaken(Value: TProc<TBitmap>);
+  property OnPhotoTakenOrPicked: TProc<TBitmap> read GetPhotoTaken write SetPhotoTaken;
+
+  constructor Create;
+  destructor Destroy; override;
+end;
+
+implementation
+
+{ TIOSPhotoService }
+
+constructor TIOSPhotoService.Create;
+begin
+  TMSFMXNativeUIImagePickerController1 := TTMSFMXNativeUIImagePickerController.Create(nil);
+  TMSFMXNativeUIImagePickerController1.OnDidFinishPickingBitmap := TMSFMXNativeUIImagePickerController1DidFinishPickingBitmap;
+  //
+  TMSFMXNativeUIImagePickerController1.OnDidCancel := IOSCAncelImagePicking;
+end;
+
+destructor TIOSPhotoService.Destroy;
+begin
+  TMSFMXNativeUIImagePickerController1.Free;
+  inherited;
+end;
+
+function TIOSPhotoService.GetPhotoTaken: TProc<TBitmap>;
+begin
+  Result := FPhotoTakenOrPicked;
+end;
+
+procedure TIOSPhotoService.PickPhoto;
+begin
+  TMSFMXNativeUIImagePickerController1.Show;
+end;
+
+procedure TIOSPhotoService.SetPhotoTaken(Value: TProc<TBitmap>);
+begin
+  FPhotoTakenOrPicked := Value;
+end;
+
+procedure TIOSPhotoService.TakePhoto;
+begin
+
+end;
+
+procedure TIOSPhotoService.TMSFMXNativeUIImagePickerController1DidFinishPickingBitmap(
+  Sender: TObject; ABitmap: TBitmap);
+begin
+
+end;
+
+end.

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899-12-30 00:00:00.000.860,\\psf\Home\Desktop\Delphi Lib\ImageService\uPhotoServiceInterface.pas=\\psf\Home\Desktop\Delphi Lib\ImageService\uImageServiceInterface.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.069,\\psf\Home\Desktop\Delphi Lib\ImageService\uPhotoService.Windows.pas=\\psf\Home\Desktop\Delphi Lib\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.397,\\psf\Home\Desktop\Delphi Lib\frmMain.pas=\\psf\Home\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.135,\\psf\Home\Desktop\Delphi Lib\ImageService\uPhotoService.IOS.pas=\\psf\Home\Desktop\Delphi Lib\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.403,=\\psf\Home\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.749,=\\psf\Home\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.796,\\psf\Home\Desktop\Delphi Lib\DelphiLib.dproj=\\psf\Home\Documents\Embarcadero\Studio\Projects\Project5.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.565,\\psf\Home\Desktop\Delphi Lib\ImageService\uPhotoService.pas=\\psf\Home\Desktop\Delphi Lib\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.830,\\psf\Home\Desktop\Delphi Lib\ImageService\uPhotoService.Android.pas=\\psf\Home\Desktop\Delphi Lib\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.200,=\\psf\Home\Desktop\Delphi Lib\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.943,=\\psf\Home\Desktop\Delphi Lib\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.126,=\\vmware-host\Shared Folders\Dokumenter\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.382,=\\psf\Home\Desktop\Delphi Lib\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.397,\\psf\Home\Desktop\Delphi Lib\frmMain.fmx=\\psf\Home\Documents\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.762,\\psf\Home\Desktop\Delphi Lib\ImageService\uImageServiceInterface.pas=\\psf\Home\Desktop\Delphi Lib\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.320,=\\psf\Home\Desktop\Delphi Lib\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.920,=\\psf\Home\Desktop\Delphi Lib\Unit1.pas</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<Pdd iOSSimulator="iPhone5" iOSDevice64="_iosdevice_ab83985e80baa02bf829ede4970f2cb7e5e4b4ff" iOSDevice32="_iosdevice_ab83985e80baa02bf829ede4970f2cb7e5e4b4ff"/>
+	</ActiveMobileDevice>
+</BorlandProject>

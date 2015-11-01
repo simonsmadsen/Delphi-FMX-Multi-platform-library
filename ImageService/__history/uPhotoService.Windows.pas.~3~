@@ -1,0 +1,58 @@
+unit uPhotoService.Windows;
+
+interface
+
+uses
+  uPhotoServiceInterface, System.SysUtils, FMX.Graphics;
+
+type
+
+TWindowsPhotoService = class(TInterfacedObject,IPhotoService)
+protected
+public
+  procedure TakePhoto;
+  procedure PickPhoto;
+  function GetPhotoTaken: TFunc<TBitmap>;
+  procedure SetPhotoTaken(Value: TFunc<TBitmap>);
+  property OnPhotoTakenOrPicked: TFunc<TBitmap> read GetPhotoTaken write SetPhotoTaken;
+
+  constructor Create;
+  destructor Destroy; override;
+end;
+
+implementation
+
+{ TWindowsPhotoService }
+
+constructor TWindowsPhotoService.Create;
+begin
+
+end;
+
+destructor TWindowsPhotoService.Destroy;
+begin
+
+  inherited;
+end;
+
+function TWindowsPhotoService.GetPhotoTaken: TFunc<TBitmap>;
+begin
+
+end;
+
+procedure TWindowsPhotoService.PickPhoto;
+begin
+
+end;
+
+procedure TWindowsPhotoService.SetPhotoTaken(Value: TFunc<TBitmap>);
+begin
+
+end;
+
+procedure TWindowsPhotoService.TakePhoto;
+begin
+
+end;
+
+end.

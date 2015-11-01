@@ -1,0 +1,12 @@
+unit uImageServiceInterface;
+
+interface
+
+type
+
+IImageService = interface
+  ['{B0AB5893-1F62-4D0C-8A48-3F20C3DCBD0E}']
+end;
+
+
+

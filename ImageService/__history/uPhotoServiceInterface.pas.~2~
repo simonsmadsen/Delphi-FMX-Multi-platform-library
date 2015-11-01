@@ -1,0 +1,13 @@
+unit uPhotoServiceInterface;
+
+interface
+
+type
+
+IPhotoService = interface
+  ['{83B303CF-6D35-4F95-850F-D468BC3CBFBD}']
+  procedure Take
+end;
+
+
+

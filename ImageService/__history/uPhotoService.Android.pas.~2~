@@ -1,0 +1,58 @@
+unit uPhotoService.Android;
+
+interface
+
+uses
+  uPhotoServiceInterface, System.SysUtils, FMX.Graphics;
+
+type
+
+TAndroidPhotoService = class(TInterfacedObject,IPhotoService)
+protected
+public
+  procedure TakePhoto;
+  procedure PickPhoto;
+  function GetPhotoTaken: TFunc<TBitmap>;
+  procedure SetPhotoTaken(Value: TFunc<TBitmap>);
+  property OnPhotoTakenOrPicked: TFunc<TBitmap> read GetPhotoTaken write SetPhotoTaken;
+
+  constructor Create;
+  destructor Destroy; override;
+end;
+
+implementation
+
+{ TAndroidPhotoService }
+
+constructor TAndroidPhotoService.Create;
+begin
+
+end;
+
+destructor TAndroidPhotoService.Destroy;
+begin
+
+  inherited;
+end;
+
+function TAndroidPhotoService.GetPhotoTaken: TFunc<TBitmap>;
+begin
+
+end;
+
+procedure TAndroidPhotoService.PickPhoto;
+begin
+
+end;
+
+procedure TAndroidPhotoService.SetPhotoTaken(Value: TFunc<TBitmap>);
+begin
+
+end;
+
+procedure TAndroidPhotoService.TakePhoto;
+begin
+
+end;
+
+end.

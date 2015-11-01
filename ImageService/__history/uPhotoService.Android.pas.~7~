@@ -1,0 +1,82 @@
+unit uPhotoService.Android;
+
+interface
+
+uses
+    FMX.MediaLibrary.Actions
+  , uPhotoServiceInterface
+  , System.SysUtils
+  , FMX.Graphics, FMX.StdCtrls;
+
+type
+
+TAndroidPhotoService = class(TInterfacedObject,IPhotoService)
+protected
+  FPhotoTakenOrPicked: TProc<TBitmap>;
+  FFakeBtn: TButton;
+  FTakePhotoFromCameraAction: TTakePhotoFromCameraAction;
+  procedure TakePhotoFromCameraActionDidFinishTaking(aBitmap: TBitmap);
+  procedure TakePhotoFromLibraryActionDidFinishTaking(aBitmap: TBitmap);
+public
+  procedure TakePhoto;
+  procedure PickPhoto;
+  function GetPhotoTaken: TProc<TBitmap>;
+  procedure SetPhotoTaken(Value: TProc<TBitmap>);
+  property OnPhotoTakenOrPicked: TProc<TBitmap> read GetPhotoTaken write SetPhotoTaken;
+
+  constructor Create;
+  destructor Destroy; override;
+end;
+
+implementation
+
+{ TAndroidPhotoService }
+
+constructor TAndroidPhotoService.Create;
+begin
+  FFakeBtn := TButton.Create(nil);
+
+  FTakePhotoFromCameraAction := TTakePhotoFromCameraAction.Create(FFakeBtn);
+  FTakePhotoFromCameraAction.OnDidFinishTaking := TakePhotoFromCameraActionDidFinishTaking;
+
+  FTakePhotoFromLibraryAction :=TTakePhotoFromLibraryAction.Create(FFakeBtn);
+  FTakePhotoFromLibraryAction.OnDidFinishTaking:=TakePhotoFromLibraryActionDidFinishTaking;
+end;
+
+destructor TAndroidPhotoService.Destroy;
+begin
+  FFakeBtn.Free;
+  FTakePhotoFromCameraAction.Free;
+  inherited;
+end;
+
+function TAndroidPhotoService.GetPhotoTaken: TProc<TBitmap>;
+begin
+  Result := FPhotoTakenOrPicked;
+end;
+
+procedure TAndroidPhotoService.PickPhoto;
+begin
+      TakePhotoFromLibraryAction.ExecuteTarget(ButtonLibrary);
+end;
+
+procedure TAndroidPhotoService.SetPhotoTaken(Value: TProc<TBitmap>);
+begin
+  FPhotoTakenOrPicked := Value;
+end;
+
+procedure TAndroidPhotoService.TakePhotoFromCameraActionDidFinishTaking(
+  aBitmap: TBitmap);
+begin
+  if Assigned(FPhotoTakenOrPicked) then
+  begin
+    FPhotoTakenOrPicked(aBitmap);
+  end;
+end;
+
+procedure TAndroidPhotoService.TakePhoto;
+begin
+  FTakePhotoFromCameraAction.ExecuteTarget(FFakeBtn);
+end;
+
+end.
